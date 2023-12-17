@@ -60,3 +60,7 @@ b {
     font-size: 20px;
     color: white;
 }
+
+label {
+    color: #3b7195;
+}
