@@ -1,39 +1,37 @@
-function soma(){
+function calcular(operacao) {
+
     var n1 = parseInt(document.querySelector("#num1").value);
     var n2 = parseInt(document.querySelector("#num2").value);
 
-    var soma = n1+n2;
-    console.log(soma);
+    if (isNaN(n1) || isNaN(n2)) {
+        alert("Digite números válidos")
+        return;
+    }
+    
+    var resultado;
 
-    document.getElementById("result").innerHTML = soma;
-}
-
-function subtracao() {
-    var n1 = parseInt(document.querySelector("#num1").value);
-    var n2 = parseInt(document.querySelector("#num2").value);
-
-    var subtracao = n1-n2;
-    console.log(subtracao);
-
-    document.getElementById("result").innerHTML = subtracao;
-}
-
-function multiplicar(){
-    var n1 = parseInt(document.querySelector("#num1").value);
-    var n2 = parseInt(document.querySelector("#num2").value);
-
-    var multiplicar =n1*n2;
-    console.log(multiplicar);
-
-    document.getElementById("result").innerHTML = multiplicar;
-}
-
-function divisao(){
-    var n1 = parseInt(document.querySelector("#num1").value);
-    var n2 = parseInt(document.querySelector("#num2").value);
-
-    var divisao =n1/n2;
-    console.log(divisao);
-
-    document.getElementById("result").innerHTML = divisao;
+    switch (operacao) {
+        case 'soma':
+            resultado = n1 + n2;
+            break;
+        case 'subtracao':
+            resultado = n1 - n2;
+            break;
+        case 'multiplicacao':
+            resultado = n1 * n2;
+            break;
+        case 'divisao':
+            if (n2 !== 0) {
+                resultado = n1 / n2; 
+            } else {
+                alert("Impossivel dividir por 0");
+                return;
+            }
+            break;
+        default:
+            alert("Operação Inválida.");
+            return;
+    }
+    console.log(resultado);
+    document.getElementById("result").innerHTML = resultado;
 }
