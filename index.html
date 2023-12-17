@@ -12,14 +12,17 @@
         <div class="result" id="result"></div>
         <div>
             <p><b>Digite os valores abaixo:</b></p>
+            <label for="num1">Nº1 </label>
             <input type="number" id="num1">
+
+            <label for="num2">Nº2 </label>
             <input type="number" id="num2">
         </div>
         <div class="botoes">
-            <button onclick="soma()"><b>+</b></button>
-            <button onclick="subtracao()"><b>-</b></button>
-            <button onclick="multiplicar()"><b>*</b></button>
-            <button onclick="divisao()"><b>/</b></button>
+            <button onclick="calcular('soma')"><b>+</b></button>
+            <button onclick="calcular('subtracao')"><b>-</b></button>
+            <button onclick="calcular('multiplicacao')"><b>*</b></button>
+            <button onclick="calcular('divisao')"><b>/</b></button>
         </div>
     </div>
     <script type="text/javascript" src="calculos.js"></script>
